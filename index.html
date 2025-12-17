@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JGF Asociados | Agendas 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vinotinto: #670626;
+            --rosa: #FFBDC5;
+            --dark-gray: #1a1a1a;
+            --white: #FFFFFF;
+        }
+
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: var(--white); color: var(--dark-gray); overflow-x: hidden; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* --- HERO --- */
+        .hero { 
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fondo-hero.jpg'); 
+            background-size: cover; background-position: center;
+            height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center;
+        }
+        .hero h1 { 
+            font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 6.5rem); line-height: 0.9;
+            color: var(--white); background: var(--vinotinto); display: inline-block;
+            padding: 15px 30px; transform: rotate(-2deg); border: 4px solid var(--rosa);
+            box-shadow: 10px 10px 0px var(--dark-gray); margin-bottom: 20px;
+        }
+        .hero p { 
+            font-size: 1.8rem; font-weight: 900; color: var(--vinotinto); 
+            text-transform: uppercase; background: var(--rosa); display: inline-block;
+            padding: 10px 20px; box-shadow: 6px 6px 0px var(--vinotinto);
+        }
+
+        /* --- SECCIÓN PRODUCTOS --- */
+        .agenda-section { background-color: var(--rosa); padding: 80px 0; }
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif; font-size: 4.5rem; text-align: center;
+            color: var(--vinotinto); text-shadow: 3px 3px 0px var(--white);
+            margin-bottom: 50px; text-transform: uppercase;
+        }
+
+        .agenda-block { background: var(--white); padding: 50px 30px; margin-bottom: 50px; border-radius: 40px; border: 4px solid var(--vinotinto); box-shadow: 15px 15px 0px var(--vinotinto); }
+        .agenda-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--vinotinto); margin-top: 0; border-bottom: 5px solid var(--rosa); display: inline-block; }
+        .sheet-badge { background: #217346; color: white; padding: 5px 15px; border-radius: 5px; font-size: 0.9rem; vertical-align: middle; margin-left: 10px; }
+        
+        /* --- VERSIONES CON BOTÓN --- */
+        .versions-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0; }
+        .version-card { background: #f9f9f9; padding: 20px; border-radius: 25px; border: 2px solid var(--rosa); text-align: center; transition: 0.3s; }
+        .version-card:hover { transform: translateY(-5px); border-color: var(--vinotinto); }
+        .version-card img { width: 100%; border-radius: 15px; height: 350px; object-fit: cover; border: 3px solid var(--vinotinto); }
+        .version-card span { display: block; margin-top: 15px; font-weight: 900; font-size: 1.2rem; color: var(--vinotinto); margin-bottom: 15px; }
+
+        .include-box { background: #fff5f7; border: 2px dashed var(--vinotinto); padding: 25px; border-radius: 20px; text-align: left; margin: 25px 0; }
+        .include-box li { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; list-style: none; position: relative; padding-left: 30px;}
+        .include-box li::before { content: '✔️'; position: absolute; left: 0; color: var(--vinotinto); }
+
+        /* --- BOTONES --- */
+        .btn { 
+            display: inline-block; padding: 15px 30px; border-radius: 12px; text-decoration: none; 
+            font-weight: 900; text-transform: uppercase; border: 3px solid var(--dark-gray);
+            box-shadow: 4px 4px 0px var(--dark-gray); transition: 0.2s; cursor: pointer; text-align: center;
+        }
+        .btn-select { background: var(--vinotinto); color: var(--white); font-size: 0.9rem; width: 100%; box-sizing: border-box; }
+        .btn-buy-now { background: #25D366; color: white; font-size: 1.5rem; width: 100%; max-width: 500px; margin: 20px auto; display: block; text-align: center; }
+        .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--dark-gray); opacity: 0.9; }
+
+        /* --- SECCIÓN PAGO --- */
+        .payment-section { background: var(--vinotinto); padding: 100px 20px; text-align: center; }
+        .credit-card {
+            background: linear-gradient(135deg, #8b1335 0%, var(--vinotinto) 100%);
+            width: 100%; max-width: 550px; height: 360px; margin: 0 auto;
+            border-radius: 25px; padding: 35px; position: relative;
+            color: white; text-align: left; box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border: 3px solid var(--rosa); font-family: 'Bebas Neue', sans-serif;
+        }
+        .card-chip { width: 65px; height: 50px; background: #FFD700; border-radius: 10px; margin-bottom: 15px; }
+        .card-type { position: absolute; top: 35px; right: 35px; font-size: 1.5rem; color: var(--rosa); letter-spacing: 2px; }
+        .card-data { font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 8px; color: var(--white); }
+        .card-label { font-family: 'Poppins'; font-size: 0.75rem; text-transform: uppercase; color: var(--rosa); font-weight: bold; }
+        .card-price { position: absolute; bottom: 25px; right: 35px; font-size: 6rem; color: var(--rosa); text-shadow: 4px 4px 0px var(--white); line-height: 0.8; }
+        .bcv-note { font-family: 'Poppins'; font-size: 1rem; color: var(--rosa); font-weight: bold; margin-top: 20px; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--rosa); color: var(--vinotinto); padding: 80px 20px; text-align: center; }
+        .footer-cta { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 1; margin-bottom: 10px; }
+        .footer-sub { font-weight: 700; font-size: 1.2rem; margin-bottom: 30px; }
+        .social-icons a { color: var(--vinotinto); font-size: 3.5rem; margin: 0 20px; transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>ORGANIZA TU 2026<br>CON INTENCIÓN Y ORDEN</h1>
+            <br>
+            <p>Agendas digitales diseñadas para tu éxito profesional.</p>
+        </div>
+    </header>
+
+    <section class="agenda-section">
+        <div class="container">
+            <h2 class="section-title">Elige tu Herramienta ✨</h2>
+
+            <div class="agenda-block">
+                <h3>📊 AGENDA CONTABLE <span class="sheet-badge">Google Sheets</span></h3>
+                <p style="font-weight: 700; font-size: 1.2rem; color: var(--vinotinto);">Diseñada para contadores que buscan automatizar su gestión y control de clientes.</p>
+                <div class="include-box">
+                    <ul>
+                        <li>Calendario fiscal 2026 automatizado.</li>
+                        <li>Control detallado de declaraciones y honorarios.</li>
+                        <li>Dashboard financiero anual con gráficos de rendimiento.</li>
+                    </ul>
+                </div>
+                
+                <div class="versions-display">
+                    <div class="version-card">
+                        <img src="contable-pink.jpg" alt="Contable Pink">
+                        <span>VERSIÓN PINK 💗</span>
+                        <a href="https://wa.me/584124079536?text=Hola!%20Estoy%20interesado%20en%20la%20Agenda%20Contable%20Versi%C3%B3n%20Pink" class="btn btn-select">Seleccionar Pink</a>
+                    </div>
+                    <div class="version-card">
+                        <img src="contable-neutral.jpg" alt="Contable Neutral">
+                        <span>VERSIÓN NEUTRAL 🤍</span>
+                        <a href="https://wa.me/584124079536?text=Hola!%20Estoy%20interesado%20en%20la%20Agenda%20Contable%20Versi%C3%B3n%20Neutral" class="btn btn-select">Seleccionar Neutral</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agenda-block">
+                <h3>💼 AGENDA EMPRENDEDORES <span class="sheet-badge">Google Sheets</span></h3>
+                <p style="font-weight: 700; font-size: 1.2rem; color: var(--vinotinto);">La herramienta perfecta para dueñas de negocio que desean claridad total en sus números.</p>
+                <div class="include-box">
+                    <ul>
+                        <li>Registro fácil e intuitivo de ingresos y gastos.</li>
+                        <li>Planificación estratégica de metas e inventario.</li>
+                        <li>Dashboard de rentabilidad mensual.</li>
+                    </ul>
+                </div>
+                
+                <div class="versions-display">
+                    <div class="version-card">
+                        <img src="emprendedora-pink.jpg" alt="Emprendedora Pink">
+                        <span>VERSIÓN PINK 💗</span>
+                        <a href="https://wa.me/584124079536?text=Hola!%20Estoy%20interesado%20en%20la%20Agenda%20Emprendedora%20Versi%C3%B3n%20Pink" class="btn btn-select">Seleccionar Pink</a>
+                    </div>
+                    <div class="version-card">
+                        <img src="emprendedora-neutral.jpg" alt="Emprendedora Neutral">
+                        <span>VERSIÓN NEUTRAL 🤍</span>
+                        <a href="https://wa.me/584124079536?text=Hola!%20Estoy%20interesado%20en%20la%20Agenda%20Emprendedora%20Versi%C3%B3n%20Neutral" class="btn btn-select">Seleccionar Neutral</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-section">
+        <h2 class="section-title" style="color: var(--rosa); text-shadow: 3px 3px 0px var(--white); margin-bottom: 20px;">¡ADQUIÉRELA HOY MISMO!</h2>
+        
+        <div class="credit-card">
+            <div class="card-type">PAGO MÓVIL</div>
+            <div class="card-chip"></div>
+            <div class="card-label">Banco BNC (0191)</div>
+            <div class="card-data">0412 407 9536</div>
+            <div class="card-label">Cédula / RIF</div>
+            <div class="card-data">V-27.372.381</div>
+            <div class="card-label">Titular</div>
+            <div class="card-data">JGF ASOCIADOS</div>
+            <div class="card-price">$10</div>
+        </div>
+        
+        <p class="bcv-note">⚠️ PAGOS EN BS. CALCULADOS A TASA BCV DEL DÍA</p>
+
+        <a href="https://wa.me/584124079536?text=Hola!%20Aquí%20adjunto%20mi%20comprobante%20por%20$10" class="btn btn-buy-now">
+            <i class="fab fa-whatsapp"></i> OBTÉN TU AGENDA POR SOLO 10$ AQUÍ
+        </a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-cta">¿LISTA PARA TOMAR EL CONTROL?</div>
+            <div class="footer-sub">No improvises tu 2026, organiza tu éxito hoy mismo 💕</div>
+            
+            <div class="social-icons">
+                <a href="https://instagram.com/jgfasociados"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:asociadosjgf09@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/584124079536"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+            <p style="margin-top: 50px; font-weight: 900; opacity: 0.8;">© 2025 JGF ASOCIADOS - CLARIDAD CONTABLE</p>
+        </div>
+    </footer>
+
+</body>
+</html>
